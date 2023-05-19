@@ -1,0 +1,730 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>RNDM Stuff</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="468ddb13-32f9-44e4-9d47-0390b2b9d17f" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">😋</span></div><h1 class="page-title">RNDM Stuff</h1></header><div class="page-body"><h1 id="fc10607f-91a3-4c41-bf1f-82f85742cc6e" class="">League of Legends</h1><div id="3e81d048-2e09-47fe-adfa-7755bcf9c811" class="column-list"><div id="f96468b8-cd7b-4fd1-a467-cdbf23c798c1" style="width:56.25%" class="column"><h2 id="08b1174d-8eba-4e85-838a-0e86a62cfb44" class="">Pros</h2><ul id="13dc5625-f1d1-4baf-92c8-8e7cc5bb3214" class="bulleted-list"><li style="list-style-type:disc">Fast-paced and exciting gameplay.</li></ul><ul id="1982d2b6-bad9-4f89-854c-74f4b01c15dc" class="bulleted-list"><li style="list-style-type:disc">Varied roster of characters, each with their own unique abilities.</li></ul><ul id="af2f9a57-7e10-487a-87bd-aa90392e7bd5" class="bulleted-list"><li style="list-style-type:disc">Competitive ranked and professional play.</li></ul><ul id="bc82d18f-b4bc-4a53-8b80-8eb032609149" class="bulleted-list"><li style="list-style-type:disc">Numerous game modes, including co-op PvE and PvP.</li></ul><ul id="728c470f-d156-4854-a635-309bd857a779" class="bulleted-list"><li style="list-style-type:disc">Free-to-play and frequent updates.</li></ul></div><div id="15abba79-6046-4d86-bf53-97b24fcdafc1" style="width:43.75%" class="column"><h2 id="a6c465c5-1c4c-48a4-8349-4d5140955222" class="">Cons</h2><ul id="898683c8-b2d7-418f-96ee-02b1897a61fe" class="bulleted-list"><li style="list-style-type:disc">High skill ceiling, making it difficult for new players to get into.</li></ul><ul id="36e6de59-f62f-4735-8063-7b27e9a1f860" class="bulleted-list"><li style="list-style-type:disc">Long games can be tedious for some players.</li></ul><ul id="df17ec95-d629-4e22-9204-bda8348c03c1" class="bulleted-list"><li style="list-style-type:disc">Matchmaking can take a long time.</li></ul><ul id="f4b743f0-bb62-41e3-88c8-5888c8cb97a6" class="bulleted-list"><li style="list-style-type:disc">In-game chat can be toxic.</li></ul><ul id="87d7618a-3c91-4911-9a3a-35556c972ce3" class="bulleted-list"><li style="list-style-type:disc">Balance issues between certain characters.</li></ul><p id="3ef6aaf0-4a6f-46c1-bcac-1d14d76478fa" class="">
+</p></div></div><h1 id="a1817689-d097-44b5-acd7-be37805cf61d" class="">Лига Легенд</h1><div id="52694a61-a542-47d1-ad4b-04527fa119e5" class="column-list"><div id="53737069-d67a-4a8b-bcc0-a41844ee4a39" style="width:50%" class="column"><h2 id="e77c8a7c-ae51-4aa8-a673-5f5ffee65db6" class="">Минусы</h2><ul id="d60ca719-169f-43d3-87c0-5237af1cfffb" class="bulleted-list"><li style="list-style-type:disc">Высокий потолок мастерства, что делает ее трудной для новичков.</li></ul><ul id="4b6802c4-286e-4d41-8080-62fcaf359c92" class="bulleted-list"><li style="list-style-type:disc">Длительные игры могут быть утомительными для некоторых игроков.</li></ul><ul id="31fca3a6-f935-4f18-a648-81ad8fe960f8" class="bulleted-list"><li style="list-style-type:disc">Сопоставление может занять длительное время.</li></ul><ul id="0e3066ad-77ff-4a79-8c4f-b6cbbdcecbcc" class="bulleted-list"><li style="list-style-type:disc">Чат в игре может быть токсичным.</li></ul><ul id="2e9e67c0-7a4d-40d2-b6c4-b140d55ac15e" class="bulleted-list"><li style="list-style-type:disc">Неравномерность между определенными персонажами.</li></ul></div><div id="d4af46f8-719b-4a01-9c21-af409118d795" style="width:50%" class="column"><h2 id="1c07094e-3787-4c58-9b8d-c3df07de1226" class="">Плюсы</h2><ul id="62f9cd96-b3e2-469e-990d-02734a72f846" class="bulleted-list"><li style="list-style-type:disc">Быстрый и захватывающий геймплей.</li></ul><ul id="9344b3e7-ec13-4ac0-beff-5e5d6d7622fd" class="bulleted-list"><li style="list-style-type:disc">Разнообразный состав персонажей, каждый со своими уникальными способностями.</li></ul><ul id="d9c20bcf-ec17-4a47-882b-7d39d4fdf432" class="bulleted-list"><li style="list-style-type:disc">Конкурентные ранговые и профессиональные игры.</li></ul><ul id="3fcea528-3798-4665-abe6-02a58ca517bd" class="bulleted-list"><li style="list-style-type:disc">Многочисленные режимы игры, включая кооперативный PvE и PvP.</li></ul><ul id="6a7b16bc-5180-43ea-a926-a7e0c82f9571" class="bulleted-list"><li style="list-style-type:disc">Бесплатная игра и частые обновления.</li></ul></div></div><p id="7fd276e9-9ccf-4f02-a3d7-17da467b7ee2" class="">
+</p><p id="f521644c-25c2-405b-a62a-76d859cb7422" class="">
+</p><h2 id="aaf7060f-64d4-43c5-88b6-65287155be6a" class="">Причины опоздания</h2><ul id="b0238103-9c47-400b-9207-26cd8cc153f9" class="bulleted-list"><li style="list-style-type:disc">Неправильное планирование и оценка времени.</li></ul><ul id="886e20d2-8d5c-44f4-8a59-a486ad96d021" class="bulleted-list"><li style="list-style-type:disc">Безусловное пребывание в трафике.</li></ul><ul id="3abe22bc-18ba-4306-9092-25ced7363055" class="bulleted-list"><li style="list-style-type:disc">Неправильное распределение времени и невыполнение плана.</li></ul><ul id="d66c078f-3c10-4c30-a1a7-9b072047de42" class="bulleted-list"><li style="list-style-type:disc">Неорганизованность и отсутствие планирования.</li></ul><ul id="6068f576-8727-4984-95fc-cef7d82ca61e" class="bulleted-list"><li style="list-style-type:disc">Неправильное понимание задачи.</li></ul><ul id="661b1c64-f1e3-4807-a514-5758544c0b87" class="bulleted-list"><li style="list-style-type:disc">Невнимательность и несцеленость.</li></ul><h1 id="94363cce-55ab-4636-a29b-c4c17a74812e" class="">Предпосылки феодальной раздробленности Русских земель в 12- начале 13 века</h1><h2 id="5e813ece-5a3a-430f-84ee-fd9d15add9f9" class="">Введение</h2><p id="94a6d72a-c322-481c-9073-7d602b5c3de8" class="">В этой статье мы рассмотрим предпосылки феодальной раздробленности на русских землях в 12- начале 13 века. В это время Русь была слабо структурированной централизованной державой, где многие принцы управляли своими землями независимо от князя в Киеве. Мы обсудим факторы, приведшие к феодальной раздробленности, а также их последствия для дальнейшего развития Руси.</p><h2 id="38fe94af-9c83-4903-a8e9-6678d1ffaa79" class="">Факторы раздробленности</h2><p id="201bd5e0-958d-4f93-81d9-4641e5163486" class="">В 12 веке и начале 13 века в Руси наблюдалось несколько факторов, приведших к распаду Русской державы и феодальной раздробленности. Самым важным фактором было династическое деление Руси, при котором принцы использовали свои земли в качестве наследства и передавали их потомкам. В результате этого процесса возникло много мелких принцевств, которые практически не были подконтрольны Киевскому князю. Другим важным фактором стала гражданская война между двумя династиями Рюриковичей в Руси. Эта война послужила причиной раздробления Русской державы и привела к роспуску Киевской Руси.</p><h2 id="049ae2b7-d2a7-4229-98aa-0c9856aeec75" class="">Последствия раздробленности</h2><p id="317ecd3c-c010-4cd4-8cd8-9d6bbecc85be" class="">Феодальная раздробленность Руси имела страшные последствия. Она привела к постоянным внутригосударственным войнам между принцами, что привело к слабости и разрушению Русской державы. Это также позволило множеству иностранных войск вторгаться на территорию Руси и делать это почти безболезненно. Такие захваты привели к потере некоторых территорий и разрушению Русского центрального правительства.</p><h2 id="49f2833d-3ae4-4221-a6c1-9d6a9bb9f0ba" class="">Заключение</h2><p id="0f8c20d8-b4b5-4052-8a7b-214f016eb843" class="">Феодальная раздробленность Русских земель в 12- начале 13 века была результатом династического деления, гражданской войны и других факторов. Это привело к постоянным войнам и слабости Русской державы. Раздробленность также послужила причиной потери некоторых территорий и разрушению Русского центрального правительства. Однако это имело положительные последствия, поскольку раздробленность дала принцам возможность устанавливать локальные правительства, которые могли помочь в развитии страны.</p><p id="da1e4cc9-357b-4ac0-b1b3-6770f6d9404b" class="">
+</p><h1 id="2e3ed87a-a6e8-44f2-8a0b-e6c5348ad903" class="">Социальная психология</h1><p id="f137c8de-3a4c-4ca6-ba73-756d15c11e2b" class="">Социальная психология – это наука о поведении людей в обществе. Она изучает взаимосвязь между личностью и общественными структурами, поведением и мышлением. Социальная психология также изучает механизмы взаимодействия между людьми, включая такие аспекты, как коммуникация, влияние, взаимоотношения, сотрудничество и конфликт. Социальные психологи применяют свои знания к пониманию таких процессов, как предрассудки и дискриминация, а также к изучению различных общественных явлений, таких как политическое действие, движения за права, религия и культура.</p><h1 id="1efbc538-ec2a-4a61-942f-b82b49611b17" class="">Python programming language</h1><p id="8306128a-f93e-4c49-882f-563e4b22d84d" class="">Python - это один из самых популярных и востребованных языков программирования. Он часто используется для разработки программного обеспечения, веб-приложений, анализа данных и многих других задач. Для начинающих программистов на Python обычно предлагают начать с печати «Hello, World!» на экран. Ниже приведен пример программы, которая будет выводить «Hello, World!» на экран:</p><pre id="ac5fd1c2-aca8-4cd7-a800-58e7de59d7de" class="code code-wrap"><code># Пример программы &quot;Hello, World!&quot; на Python
+
+print(&quot;Hello, World!&quot;)
+</code></pre><h1 id="66c60884-b147-4dfb-82fa-a4e1ca3d5dbb" class="">Пример программы &quot;Калькулятор&quot; на Python</h1><p id="5c1cbd01-b942-4d17-bced-8d42d735aa06" class="">Эта программа позволит пользователю выполнять основные математические операции с двумя числами. Пользователь вводит два числа и выбирает операцию, которую хочет выполнить. Затем программа выполняет эту операцию и выводит результат на экран.</p><pre id="81d0bd48-f09c-4f66-aaa8-37e26c5c8237" class="code code-wrap"><code># Пример программы &quot;Калькулятор&quot; на Python
+
+# Запросить два числа для вычислений
+num1 = float(input(&quot;Введите первое число: &quot;))
+num2 = float(input(&quot;Введите второе число: &quot;))
+
+# Запросить вид операции
+print(&quot;Выберите операцию:&quot;)
+print(&quot;1. Сложение&quot;)
+print(&quot;2. Вычитание&quot;)
+print(&quot;3. Умножение&quot;)
+print(&quot;4. Деление&quot;)
+
+# Принять выбор пользователя
+choice = input(&quot;Выбор (1/2/3/4): &quot;)
+
+# Выполнить выбранную операцию
+if choice == &#x27;1&#x27;:
+   print(num1+num2)
+elif choice == &#x27;2&#x27;:
+   print(num1-num2)
+elif choice == &#x27;3&#x27;:
+   print(num1*num2)
+elif choice == &#x27;4&#x27;:
+   print(num1/num2)
+else:
+   print(&quot;Неверный выбор&quot;)
+
+</code></pre><h1 id="eb45d143-4aac-4d59-9dd6-7565a7c2638b" class="">Пример генератора графиков на Python</h1><p id="79260cde-6d53-4e55-a3f6-7dea9e399316" class="">Python имеет мощный инструментарий для генерации графических представлений. В этом примере мы рассмотрим генератор графиков на Python, используя модуль «matplotlib». Для создания графика нам понадобится датасет с данными для построения. Данные могут быть представлены в виде списков, кортежей, или более сложных структур данных. Затем нам нужно будет импортировать нужные модули и использовать их для создания графика. Например, ниже приведен пример программы на Python, которая будет строить график по предоставленным данным:</p><pre id="d743f4b4-9ad3-45a3-8938-f57c5a0df8e0" class="code code-wrap"><code># Пример генератора графиков на Python
+
+import matplotlib.pyplot as plt
+
+# Создать датасет с данными для построения графика
+data = [2,4,6,8,10]
+
+# Создать график
+plt.plot(data)
+
+# Отобразить график
+plt.show()
+
+</code></pre><h1 id="5f29f197-1538-46d4-8182-61c498067053" class="">Теоретическая механика</h1><p id="c09121ef-14f0-4192-b3c7-e14ea6cc5478" class="">Теоретическая механика — это математический анализ движения тел и взаимодействия сил. Она используется для изучения таких феноменов, как постоянный равновесный движения тел, баланс крутящих моментов, движение по орбитам и даже движение света. Также она используется для изучения таких явлений, как гравитация, магнетизм, вибрация и упругость. В теоретической механике используются различные математические методы, такие как дифференциальные уравнения, матричные методы, теория вероятностей и статистика.</p><p id="a45b965e-f349-48a3-a6d6-350babb07482" class="">https://youtu.be/tNEht0I06uw</p><p id="2f344309-e15c-42ff-a099-fc292953ed02" class="">
+</p><figure id="0dd0f8a3-48f8-4d36-a902-388193a969d2" class="image"><a href="RNDM%20Stuff%20468ddb1332f944e49d470390b2b9d17f/Untitled.png"><img style="width:274px" src="RNDM%20Stuff%20468ddb1332f944e49d470390b2b9d17f/Untitled.png"/></a></figure><p id="09772458-fdcf-458d-9d7f-7e31ccd11ae9" class="">Проектная деятельность включает в себя применение принципов планирования и организации, чтобы достичь определенной цели или завершить проект. Она включает в себя планирование целей, распределение ресурсов, мониторинг процессов и оценку результатов. Проектная деятельность может быть применена к различным отраслям, включая бизнес, инженерию, исследования и образование. Она также может использоваться для достижения индивидуальных целей, например строительство дома.</p><figure id="aea1a024-b8f8-4fda-9463-2214c2811092" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>i</mi><mi mathvariant="normal">ℏ</mi><mfrac><mi mathvariant="normal">∂</mi><mrow><mi mathvariant="normal">∂</mi><mi>t</mi></mrow></mfrac><mi>ψ</mi><mo stretchy="false">(</mo><mover accent="true"><mi>r</mi><mo>⃗</mo></mover><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mover accent="true"><mi>H</mi><mo>^</mo></mover><mi>ψ</mi><mo stretchy="false">(</mo><mover accent="true"><mi>r</mi><mo>⃗</mo></mover><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">i\hbar\frac{\partial}{\partial t}\psi(\vec{r},t)=\hat{H}\psi(\vec{r},t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.05744em;vertical-align:-0.686em;"></span><span class="mord mathnormal">i</span><span class="mord">ℏ</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal" style="margin-right:0.03588em;">ψ</span><span class="mopen">(</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.17994em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.19677em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9467699999999999em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.03588em;">ψ</span><span class="mopen">(</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.17994em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></span></div></figure><p id="72072433-e1bb-42c0-8ecc-518d18875f13" class="">что подразумевается под коомандным созданием?</p><p id="fd1f2359-c536-4bea-9a5c-f9c655a42924" class="">код?</p><p id="0ef0c450-56e8-4480-b51b-f89835837be9" class="">думаю тольуо если code-server подниматьб и то хз</p></div></article></body></html>
